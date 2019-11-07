@@ -1,5 +1,6 @@
-package it.nextre.academy.nxtlearn.controller;
+package it.nextre.academy.nxtlearn.controller.handleRest.controller;
 
+import it.nextre.academy.nxtlearn.exception.BadRequestException;
 import it.nextre.academy.nxtlearn.exception.NotFoundException;
 import it.nextre.academy.nxtlearn.exception.PersonaNotFoundException;
 import it.nextre.academy.nxtlearn.model.Persona;
@@ -8,9 +9,11 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 
+import javax.validation.Valid;
 import java.util.List;
 
 @RestController
@@ -39,8 +42,20 @@ public class PersonaRestController {
 
 
     @PostMapping({"/add", "/create"})
-    public Persona addOne(@RequestBody Persona tmp) {
+    public Persona addOne(@RequestBody @Valid Persona tmp, BindingResult validator) {
         logger.debug("LOG: addOne()");
+
+        if (validator.hasErrors()) {
+            logger.debug("LOG: validator.hasErrors()");
+            String errs = validator.getAllErrors()
+                    .stream()
+                    .map(e -> e.getDefaultMessage())
+                    .reduce("", (a, b) -> a += "\n" + b);
+            throw new BadRequestException(errs);
+        }
+
+
+
         if (tmp != null) {
             personaService.newPersona(tmp);
         }

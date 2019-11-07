@@ -1,4 +1,4 @@
-package it.nextre.academy.nxtlearn.controller;
+package it.nextre.academy.nxtlearn.controller.handle;
 
 import it.nextre.academy.nxtlearn.exception.NotFoundException;
 import org.springframework.http.HttpStatus;
@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.servlet.ModelAndView;
 
-@ControllerAdvice //è in ascolto dall'interno
+@ControllerAdvice("it.nextre.academy.nxtlearn.controller.handle") //è in ascolto dall'interno
 public class ExceptionHandlerController {
 
     //@ExceptionHandler(NotFoundException.class)

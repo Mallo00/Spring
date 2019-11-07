@@ -1,20 +1,24 @@
-package it.nextre.academy.nxtlearn.controller;
+package it.nextre.academy.nxtlearn.controller.handleRest;
 
+import it.nextre.academy.nxtlearn.exception.BadRequestException;
 import it.nextre.academy.nxtlearn.exception.NotFoundException;
 import it.nextre.academy.nxtlearn.exception.PersonaNotFoundException;
 import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.util.MultiValueMap;
 import org.springframework.web.bind.annotation.ExceptionHandler;
+import org.springframework.web.bind.annotation.RestControllerAdvice;
 
 import java.time.Instant;
-import java.util.*;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
-
+@RestControllerAdvice("it.nextre.academy.nxtlearn.controller.handleRest")
 public class ExceptionHandlerRest extends PersonaNotFoundException {
 
     //Logger logger= LoggerFactory.getLogger(this.getClass());
@@ -29,7 +33,7 @@ public class ExceptionHandlerRest extends PersonaNotFoundException {
     }
 
     @ExceptionHandler(BadRequestException.class)
-    public ResponseEntity handleBadRequest(NotFoundException e) {
+    public ResponseEntity handleBadRequest(BadRequestException e) {
         logger.debug("LOG: handleBadRequest()");
         return new MyError(HttpStatus.BAD_REQUEST, e.getMessage())
                 .getPage();

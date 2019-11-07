@@ -1,61 +1,50 @@
-19-11-07 gio 12:42:37.779  INFO   ---  [restartedMain            ]  o.s.b.w.embedded.tomcat.TomcatWebServer  :  Tomcat initialized with port(s): 8080 (http) 
-19-11-07 gio 12:42:37.789  INFO   ---  [restartedMain            ]  org.apache.catalina.core.StandardService :  Starting service [Tomcat] 
-19-11-07 gio 12:42:37.790  INFO   ---  [restartedMain            ]  org.apache.catalina.core.StandardEngine  :  Starting Servlet engine: [Apache Tomcat/9.0.27] 
-19-11-07 gio 12:42:37.844  INFO   ---  [restartedMain            ]  o.a.c.c.C.[Tomcat].[localhost].[/]       :  Initializing Spring embedded WebApplicationContext 
-19-11-07 gio 12:42:37.848  INFO   ---  [restartedMain            ]  o.s.web.context.ContextLoader            :  Root WebApplicationContext: initialization completed in 828 ms 
-19-11-07 gio 12:42:37.957  INFO   ---  [restartedMain            ]  o.s.s.concurrent.ThreadPoolTaskExecutor  :  Initializing ExecutorService 'applicationTaskExecutor' 
-19-11-07 gio 12:42:37.997  INFO   ---  [restartedMain            ]  o.s.b.a.w.s.WelcomePageHandlerMapping    :  Adding welcome page: class path resource [static/index.html] 
-19-11-07 gio 12:42:38.069  INFO   ---  [restartedMain            ]  o.s.b.d.a.OptionalLiveReloadServer       :  LiveReload server is running on port 35729 
-19-11-07 gio 12:42:38.097  INFO   ---  [restartedMain            ]  o.s.b.w.embedded.tomcat.TomcatWebServer  :  Tomcat started on port(s): 8080 (http) with context path '' 
-19-11-07 gio 12:42:38.099  INFO   ---  [restartedMain            ]  i.n.academy.nxtlearn.NxtlearnApplication :  Started NxtlearnApplication in 1.379 seconds (JVM running for 1.68) 
-19-11-07 gio 12:48:16.995  INFO   ---  [restartedMain            ]  o.springframework.boot.SpringApplication :   _______  ____  ______________ ____     ___________   _____ __________  _______
+19-11-07 gio 16:08:49.514  INFO   ---  [restartedMain            ]  o.s.b.w.embedded.tomcat.TomcatWebServer  :  Tomcat initialized with port(s): 8080 (http) 
+19-11-07 gio 16:08:49.530  INFO   ---  [restartedMain            ]  org.apache.catalina.core.StandardService :  Starting service [Tomcat] 
+19-11-07 gio 16:08:49.530  INFO   ---  [restartedMain            ]  org.apache.catalina.core.StandardEngine  :  Starting Servlet engine: [Apache Tomcat/9.0.27] 
+19-11-07 gio 16:08:49.590  INFO   ---  [restartedMain            ]  o.a.c.c.C.[Tomcat].[localhost].[/]       :  Initializing Spring embedded WebApplicationContext 
+19-11-07 gio 16:08:49.590  INFO   ---  [restartedMain            ]  o.s.web.context.ContextLoader            :  Root WebApplicationContext: initialization completed in 835 ms 
+19-11-07 gio 16:08:49.714  INFO   ---  [restartedMain            ]  o.s.s.concurrent.ThreadPoolTaskExecutor  :  Initializing ExecutorService 'applicationTaskExecutor' 
+19-11-07 gio 16:08:49.750  INFO   ---  [restartedMain            ]  o.s.b.a.w.s.WelcomePageHandlerMapping    :  Adding welcome page: class path resource [static/index.html] 
+19-11-07 gio 16:08:49.818  INFO   ---  [restartedMain            ]  o.s.b.d.a.OptionalLiveReloadServer       :  LiveReload server is running on port 35729 
+19-11-07 gio 16:08:49.842  INFO   ---  [restartedMain            ]  o.s.b.w.embedded.tomcat.TomcatWebServer  :  Tomcat started on port(s): 8080 (http) with context path '' 
+19-11-07 gio 16:08:49.846  INFO   ---  [restartedMain            ]  i.n.academy.nxtlearn.NxtlearnApplication :  Started NxtlearnApplication in 1.407 seconds (JVM running for 3.936) 
+19-11-07 gio 16:08:54.759  INFO   ---  [http-nio-8080-exec-1     ]  o.a.c.c.C.[Tomcat].[localhost].[/]       :  Initializing Spring DispatcherServlet 'dispatcherServlet' 
+19-11-07 gio 16:08:54.759  INFO   ---  [http-nio-8080-exec-1     ]  o.s.web.servlet.DispatcherServlet        :  Initializing Servlet 'dispatcherServlet' 
+19-11-07 gio 16:08:54.767  INFO   ---  [http-nio-8080-exec-1     ]  o.s.web.servlet.DispatcherServlet        :  Completed initialization in 4 ms 
+19-11-07 gio 16:08:54.863  DEBUG  ---  [http-nio-8080-exec-1     ]  i.n.a.n.c.h.c.PersonaRestController      :  LOG: addOne() 
+19-11-07 gio 16:08:54.863  DEBUG  ---  [http-nio-8080-exec-1     ]  i.n.a.n.c.h.c.PersonaRestController      :  LOG: validator.hasErrors() 
+19-11-07 gio 16:08:54.871  DEBUG  ---  [http-nio-8080-exec-1     ]  pConfig$$EnhancerBySpringCGLIB$$89d06edf :  LOG: handleBadRequest() 
+19-11-07 gio 16:08:54.891  WARN   ---  [http-nio-8080-exec-1     ]  .m.m.a.ExceptionHandlerExceptionResolver :  Resolved [it.nextre.academy.nxtlearn.exception.BadRequestException: 
+Field error in object 'persona' on field 'nome': rejected value []; codes [Size.persona.nome,Size.nome,Size.java.lang.String,Size]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [persona.nome,nome]; arguments []; default message [nome],2147483647,2]; default message [Almeno due caratteri]
+Field error in object 'persona' on field 'nome': rejected value []; codes [NotBlank.persona.nome,NotBlank.nome,NotBlank.java.lang.String,NotBlank]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [persona.nome,nome]; arguments []; default message [nome]]; default message [Nome non valido]] 
+19-11-07 gio 16:09:27.515  INFO   ---  [restartedMain            ]  o.springframework.boot.SpringApplication :   _______  ____  ______________ ____     ___________   _____ __________  _______
  \      \ \   \/  /\__    ___/|    |    \_   _____/  /  _  \\______   \ \      \
  /   |   \ \     /   |    |   |    |     |    __)_  /  /_\  \|       _/ /   |   \
 /    |    \/     \   |    |   |    |___  |        \/    |    \    |   \/    |    \
 \____|__  /___/\  \  |____|   |_______ \/_______  /\____|__  /____|_  /\____|__  /
         \/      \_/                   \/        \/         \/       \/         \/
  
-19-11-07 gio 12:48:17.037  INFO   ---  [restartedMain            ]  i.n.academy.nxtlearn.NxtlearnApplication :  Starting NxtlearnApplication on nextre163 with PID 10892 (C:\Academy\Spring\nxtlearn\target\classes started by utente in C:\Academy\Spring\nxtlearn) 
-19-11-07 gio 12:48:17.038  DEBUG  ---  [restartedMain            ]  i.n.academy.nxtlearn.NxtlearnApplication :  Running with Spring Boot v2.2.0.RELEASE, Spring v5.2.0.RELEASE 
-19-11-07 gio 12:48:17.038  INFO   ---  [restartedMain            ]  i.n.academy.nxtlearn.NxtlearnApplication :  The following profiles are active: dev 
-19-11-07 gio 12:48:17.067  INFO   ---  [restartedMain            ]  .e.DevToolsPropertyDefaultsPostProcessor :  Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable 
-19-11-07 gio 12:48:17.067  INFO   ---  [restartedMain            ]  .e.DevToolsPropertyDefaultsPostProcessor :  For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG' 
-19-11-07 gio 12:48:17.822  INFO   ---  [restartedMain            ]  o.s.b.w.embedded.tomcat.TomcatWebServer  :  Tomcat initialized with port(s): 8080 (http) 
-19-11-07 gio 12:48:17.829  INFO   ---  [restartedMain            ]  org.apache.catalina.core.StandardService :  Starting service [Tomcat] 
-19-11-07 gio 12:48:17.830  INFO   ---  [restartedMain            ]  org.apache.catalina.core.StandardEngine  :  Starting Servlet engine: [Apache Tomcat/9.0.27] 
-19-11-07 gio 12:48:17.884  INFO   ---  [restartedMain            ]  o.a.c.c.C.[Tomcat].[localhost].[/]       :  Initializing Spring embedded WebApplicationContext 
-19-11-07 gio 12:48:17.884  INFO   ---  [restartedMain            ]  o.s.web.context.ContextLoader            :  Root WebApplicationContext: initialization completed in 816 ms 
-19-11-07 gio 12:48:18.002  INFO   ---  [restartedMain            ]  o.s.s.concurrent.ThreadPoolTaskExecutor  :  Initializing ExecutorService 'applicationTaskExecutor' 
-19-11-07 gio 12:48:18.040  INFO   ---  [restartedMain            ]  o.s.b.a.w.s.WelcomePageHandlerMapping    :  Adding welcome page: class path resource [static/index.html] 
-19-11-07 gio 12:48:18.103  INFO   ---  [restartedMain            ]  o.s.b.d.a.OptionalLiveReloadServer       :  LiveReload server is running on port 35729 
-19-11-07 gio 12:48:18.131  INFO   ---  [restartedMain            ]  o.s.b.w.embedded.tomcat.TomcatWebServer  :  Tomcat started on port(s): 8080 (http) with context path '' 
-19-11-07 gio 12:48:18.134  INFO   ---  [restartedMain            ]  i.n.academy.nxtlearn.NxtlearnApplication :  Started NxtlearnApplication in 1.364 seconds (JVM running for 1.664) 
-19-11-07 gio 12:48:29.440  INFO   ---  [http-nio-8080-exec-2     ]  o.a.c.c.C.[Tomcat].[localhost].[/]       :  Initializing Spring DispatcherServlet 'dispatcherServlet' 
-19-11-07 gio 12:48:29.441  INFO   ---  [http-nio-8080-exec-2     ]  o.s.web.servlet.DispatcherServlet        :  Initializing Servlet 'dispatcherServlet' 
-19-11-07 gio 12:48:29.446  INFO   ---  [http-nio-8080-exec-2     ]  o.s.web.servlet.DispatcherServlet        :  Completed initialization in 4 ms 
-19-11-07 gio 12:48:29.503  INFO   ---  [http-nio-8080-exec-2     ]  nxtlearnLogger                           :  Log: update() 
-19-11-07 gio 12:48:33.852  INFO   ---  [http-nio-8080-exec-3     ]  i.n.a.n.controller.PersonaController     :  Log: getPersone() 
-19-11-07 gio 12:49:24.217  INFO   ---  [http-nio-8080-exec-4     ]  nxtlearnLogger                           :  Log: update() 
-19-11-07 gio 12:49:24.218  WARN   ---  [http-nio-8080-exec-4     ]  .w.s.m.a.ResponseStatusExceptionResolver :  Resolved [org.springframework.web.server.ResponseStatusException: 400 BAD_REQUEST] 
-19-11-07 gio 14:36:48.992  INFO   ---  [restartedMain            ]  o.springframework.boot.SpringApplication :   _______  ____  ______________ ____     ___________   _____ __________  _______
- \      \ \   \/  /\__    ___/|    |    \_   _____/  /  _  \\______   \ \      \
- /   |   \ \     /   |    |   |    |     |    __)_  /  /_\  \|       _/ /   |   \
-/    |    \/     \   |    |   |    |___  |        \/    |    \    |   \/    |    \
-\____|__  /___/\  \  |____|   |_______ \/_______  /\____|__  /____|_  /\____|__  /
-        \/      \_/                   \/        \/         \/       \/         \/
- 
-19-11-07 gio 14:36:49.033  INFO   ---  [restartedMain            ]  i.n.academy.nxtlearn.NxtlearnApplication :  Starting NxtlearnApplication on nextre163 with PID 1888 (C:\Academy\Spring\nxtlearn\target\classes started by utente in C:\Academy\Spring\nxtlearn) 
-19-11-07 gio 14:36:49.033  DEBUG  ---  [restartedMain            ]  i.n.academy.nxtlearn.NxtlearnApplication :  Running with Spring Boot v2.2.0.RELEASE, Spring v5.2.0.RELEASE 
-19-11-07 gio 14:36:49.033  INFO   ---  [restartedMain            ]  i.n.academy.nxtlearn.NxtlearnApplication :  The following profiles are active: dev 
-19-11-07 gio 14:36:49.062  INFO   ---  [restartedMain            ]  .e.DevToolsPropertyDefaultsPostProcessor :  Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable 
-19-11-07 gio 14:36:49.062  INFO   ---  [restartedMain            ]  .e.DevToolsPropertyDefaultsPostProcessor :  For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG' 
-19-11-07 gio 14:36:49.814  INFO   ---  [restartedMain            ]  o.s.b.w.embedded.tomcat.TomcatWebServer  :  Tomcat initialized with port(s): 8080 (http) 
-19-11-07 gio 14:36:49.821  INFO   ---  [restartedMain            ]  org.apache.catalina.core.StandardService :  Starting service [Tomcat] 
-19-11-07 gio 14:36:49.822  INFO   ---  [restartedMain            ]  org.apache.catalina.core.StandardEngine  :  Starting Servlet engine: [Apache Tomcat/9.0.27] 
-19-11-07 gio 14:36:49.874  INFO   ---  [restartedMain            ]  o.a.c.c.C.[Tomcat].[localhost].[/]       :  Initializing Spring embedded WebApplicationContext 
-19-11-07 gio 14:36:49.874  INFO   ---  [restartedMain            ]  o.s.web.context.ContextLoader            :  Root WebApplicationContext: initialization completed in 812 ms 
-19-11-07 gio 14:36:49.986  INFO   ---  [restartedMain            ]  o.s.s.concurrent.ThreadPoolTaskExecutor  :  Initializing ExecutorService 'applicationTaskExecutor' 
-19-11-07 gio 14:36:50.024  INFO   ---  [restartedMain            ]  o.s.b.a.w.s.WelcomePageHandlerMapping    :  Adding welcome page: class path resource [static/index.html] 
-19-11-07 gio 14:36:50.086  INFO   ---  [restartedMain            ]  o.s.b.d.a.OptionalLiveReloadServer       :  LiveReload server is running on port 35729 
-19-11-07 gio 14:36:50.113  INFO   ---  [restartedMain            ]  o.s.b.w.embedded.tomcat.TomcatWebServer  :  Tomcat started on port(s): 8080 (http) with context path '' 
-19-11-07 gio 14:36:50.116  INFO   ---  [restartedMain            ]  i.n.academy.nxtlearn.NxtlearnApplication :  Started NxtlearnApplication in 1.348 seconds (JVM running for 1.651) 
+19-11-07 gio 16:09:27.555  INFO   ---  [restartedMain            ]  i.n.academy.nxtlearn.NxtlearnApplication :  Starting NxtlearnApplication on nextre163 with PID 16256 (C:\Academy\Spring\nxtlearn\target\classes started by utente in C:\Academy\Spring\nxtlearn) 
+19-11-07 gio 16:09:27.559  DEBUG  ---  [restartedMain            ]  i.n.academy.nxtlearn.NxtlearnApplication :  Running with Spring Boot v2.2.0.RELEASE, Spring v5.2.0.RELEASE 
+19-11-07 gio 16:09:27.559  INFO   ---  [restartedMain            ]  i.n.academy.nxtlearn.NxtlearnApplication :  The following profiles are active: dev 
+19-11-07 gio 16:09:27.587  INFO   ---  [restartedMain            ]  .e.DevToolsPropertyDefaultsPostProcessor :  Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable 
+19-11-07 gio 16:09:27.587  INFO   ---  [restartedMain            ]  .e.DevToolsPropertyDefaultsPostProcessor :  For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG' 
+19-11-07 gio 16:09:28.430  INFO   ---  [restartedMain            ]  o.s.b.w.embedded.tomcat.TomcatWebServer  :  Tomcat initialized with port(s): 8080 (http) 
+19-11-07 gio 16:09:28.438  INFO   ---  [restartedMain            ]  org.apache.catalina.core.StandardService :  Starting service [Tomcat] 
+19-11-07 gio 16:09:28.438  INFO   ---  [restartedMain            ]  org.apache.catalina.core.StandardEngine  :  Starting Servlet engine: [Apache Tomcat/9.0.27] 
+19-11-07 gio 16:09:28.493  INFO   ---  [restartedMain            ]  o.a.c.c.C.[Tomcat].[localhost].[/]       :  Initializing Spring embedded WebApplicationContext 
+19-11-07 gio 16:09:28.493  INFO   ---  [restartedMain            ]  o.s.web.context.ContextLoader            :  Root WebApplicationContext: initialization completed in 906 ms 
+19-11-07 gio 16:09:28.613  INFO   ---  [restartedMain            ]  o.s.s.concurrent.ThreadPoolTaskExecutor  :  Initializing ExecutorService 'applicationTaskExecutor' 
+19-11-07 gio 16:09:28.649  INFO   ---  [restartedMain            ]  o.s.b.a.w.s.WelcomePageHandlerMapping    :  Adding welcome page: class path resource [static/index.html] 
+19-11-07 gio 16:09:28.725  INFO   ---  [restartedMain            ]  o.s.b.d.a.OptionalLiveReloadServer       :  LiveReload server is running on port 35729 
+19-11-07 gio 16:09:28.753  INFO   ---  [restartedMain            ]  o.s.b.w.embedded.tomcat.TomcatWebServer  :  Tomcat started on port(s): 8080 (http) with context path '' 
+19-11-07 gio 16:09:28.757  INFO   ---  [restartedMain            ]  i.n.academy.nxtlearn.NxtlearnApplication :  Started NxtlearnApplication in 1.473 seconds (JVM running for 4.708) 
+19-11-07 gio 16:09:28.925  INFO   ---  [http-nio-8080-exec-1     ]  o.a.c.c.C.[Tomcat].[localhost].[/]       :  Initializing Spring DispatcherServlet 'dispatcherServlet' 
+19-11-07 gio 16:09:28.925  INFO   ---  [http-nio-8080-exec-1     ]  o.s.web.servlet.DispatcherServlet        :  Initializing Servlet 'dispatcherServlet' 
+19-11-07 gio 16:09:28.929  INFO   ---  [http-nio-8080-exec-1     ]  o.s.web.servlet.DispatcherServlet        :  Completed initialization in 4 ms 
+19-11-07 gio 16:09:29.025  DEBUG  ---  [http-nio-8080-exec-1     ]  i.n.a.n.c.h.c.PersonaRestController      :  LOG: addOne() 
+19-11-07 gio 16:09:29.025  DEBUG  ---  [http-nio-8080-exec-1     ]  i.n.a.n.c.h.c.PersonaRestController      :  LOG: validator.hasErrors() 
+19-11-07 gio 16:09:29.029  DEBUG  ---  [http-nio-8080-exec-1     ]  pConfig$$EnhancerBySpringCGLIB$$f86e4c09 :  LOG: handleBadRequest() 
+19-11-07 gio 16:09:29.049  WARN   ---  [http-nio-8080-exec-1     ]  .m.m.a.ExceptionHandlerExceptionResolver :  Resolved [it.nextre.academy.nxtlearn.exception.BadRequestException: 
+Almeno due caratteri
+Nome non valido] 

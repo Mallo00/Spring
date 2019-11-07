@@ -1,4 +1,4 @@
-package it.nextre.academy.nxtlearn.controller;
+package it.nextre.academy.nxtlearn.exception;
 
 public class BadRequestException extends RuntimeException {
     public BadRequestException(){
