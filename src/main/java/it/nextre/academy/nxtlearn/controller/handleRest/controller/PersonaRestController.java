@@ -15,6 +15,7 @@ import org.springframework.web.server.ResponseStatusException;
 
 import javax.validation.Valid;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/personaRest")
@@ -24,43 +25,8 @@ public class PersonaRestController {
     // todo creare un bean conosciuto da spring in modo da collegarlo al logger
     Logger logger = LoggerFactory.getLogger(this.getClass());
 
- //   @Autowired
- //   Logger logger;
-
-    @DeleteMapping({"/removeById/{id}", "/deleteById/{id}"})
-    public Persona deleteById(@PathVariable("id") Integer id) {
-        logger.info("LOG: deleteById, id=" + id);
-        Persona tmp = personaService.getById(id);
-        if (tmp != null) {
-            personaService.deleteById(id);
-            return tmp;
-        } else {
-            System.out.println("sasso");
-            throw new PersonaNotFoundException();
-        }
-    }
 
 
-    @PostMapping({"/add", "/create"})
-    public Persona addOne(@RequestBody @Valid Persona tmp, BindingResult validator) {
-        logger.debug("LOG: addOne()");
-
-        if (validator.hasErrors()) {
-            logger.debug("LOG: validator.hasErrors()");
-            String errs = validator.getAllErrors()
-                    .stream()
-                    .map(e -> e.getDefaultMessage())
-                    .reduce("", (a, b) -> a += "\n" + b);
-            throw new BadRequestException(errs);
-        }
-
-
-
-        if (tmp != null) {
-            personaService.newPersona(tmp);
-        }
-        return tmp;
-    }
 
 
     @GetMapping({"/findById/{id}", "/{id}", "/getById/{id}", "/get/{id}"})
@@ -73,7 +39,6 @@ public class PersonaRestController {
             throw new PersonaNotFoundException();
         }
     }
-
 
     @GetMapping({"/", "/all"})
     public List<Persona> getPersone() {
@@ -95,4 +60,33 @@ public class PersonaRestController {
         throw new ResponseStatusException(HttpStatus.BAD_REQUEST);
     }
 
+    @PostMapping({"/add", "/create"})
+    public Persona addOne(@RequestBody @Valid Persona tmp, BindingResult validator) {
+        logger.debug("LOG: addOne()");
+        if (validator.hasErrors()) {
+            logger.debug("LOG: validator.hasErrors()");
+            String errs = validator.getAllErrors()
+                    .stream()
+                    .map(e -> e.getDefaultMessage())
+                    .collect(Collectors.joining(", "));
+            throw new BadRequestException(errs);
+        }
+        if (tmp != null) {
+            personaService.newPersona(tmp);
+        }
+        return tmp;
+    }
+
+    @DeleteMapping({"/removeById/{id}", "/deleteById/{id}"})
+    public Persona deleteById(@PathVariable("id") Integer id) {
+        logger.info("LOG: deleteById, id=" + id);
+        Persona tmp = personaService.getById(id);
+        if (tmp != null) {
+            personaService.deleteById(id);
+            return tmp;
+        } else {
+            System.out.println("sasso");
+            throw new PersonaNotFoundException();
+        }
+    }
 }//end class

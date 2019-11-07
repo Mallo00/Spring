@@ -9,6 +9,7 @@ import java.util.stream.Collectors;
 
 @Repository
 public class PersonaRepository {
+
     private List<Persona> db = new ArrayList<>();
 
     {
