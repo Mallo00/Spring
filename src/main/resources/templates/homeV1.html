@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="it" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Pagina di Template</title>
+</head>
+<body>
+<h1>Pagina dinamica v1</h1>
+<div>
+    <p>Data e ora: <span th:text="${dataora}"> </span> </p>
+</div>
+<div>
+    <ul>
+        <li th:each="item,idx : ${estratti}">
+            <span th:text="${idx.count}"> </span> ° estratto:
+            <span th:text="${item}" th:class="${item%2==0 ? 'pari':'dispari'}">
+            </span>
+        </li>
+    </ul>
+</div>
+
+<div>
+    
+</div>
+
+</body>
+</html>
