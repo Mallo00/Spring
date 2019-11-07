@@ -62,7 +62,7 @@ public class PersonaServiceImpl implements PersonaService {
 
     @Override
     public Persona update(Persona p) {
-        if (p!=null&&getById(p.getId())!=null){
+        if (p != null && getById(p.getId()) != null) {
             return personaRepository.save(p);
         }
         return null;
