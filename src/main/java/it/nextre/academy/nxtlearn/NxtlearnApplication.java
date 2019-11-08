@@ -10,4 +10,6 @@ public class NxtlearnApplication {
 		SpringApplication.run(NxtlearnApplication.class, args);
 	}
 
+    // todo caricamento dei dati di provae il repo è vuoto
+
 }

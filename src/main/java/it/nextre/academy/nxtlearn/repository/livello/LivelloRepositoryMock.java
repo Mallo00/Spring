@@ -1,24 +1,21 @@
-package it.nextre.academy.nxtlearn.repository;
+package it.nextre.academy.nxtlearn.repository.livello;
 
-import it.nextre.academy.nxtlearn.model.Persona;
+import it.nextre.academy.nxtlearn.model.Livello;
 import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
 
 @Repository
-public class PersonaRepository {
+public class LivelloRepositoryMock {
 
-    private List<Persona> db = new ArrayList<>();
+    private List<Livello> db = new ArrayList<>();
 
+
+
+/*
     {
-        db.add(new Persona(1, "Mario", "Red"));
-        db.add(new Persona(2, "Michele", "Bossi"));
-        db.add(new Persona(3, "Michela", "Manelli"));
-        db.add(new Persona(4, "Gino", "Brunetta"));
-        db.add(new Persona(5, "Maria", "Vongola"));
-        db.add(new Persona(6, "Gina", "Branzino"));
+
     }
 
     public Persona save(Persona p) {
@@ -28,7 +25,7 @@ public class PersonaRepository {
                     .collect(Collectors.toList())
                     .contains(p.getId())) {
                 //posso aggiornare
-                Persona tmp = db.stream()
+                Livello tmp = db.stream()
                         .filter(per -> per.getId().equals(p.getId()))
                         .findFirst()
                         .get();
@@ -54,7 +51,7 @@ public class PersonaRepository {
     }
 
 
-    public List<Persona> getAll() {
+    public List<Persona> findAll() {
         List<Persona> tmp = new ArrayList<>();
         for (Persona p :
                 db) {
@@ -63,22 +60,27 @@ public class PersonaRepository {
         return tmp;
     }
 
-    public Persona findById(Integer id) {
+    public Optional<Persona> findById(Integer id) {
         Persona tmp = db.stream()
                 .filter(persona -> persona.getId().equals(id))
                 .findFirst()
                 .orElse(null);
-        return (tmp!=null)?tmp.clone():null;
+        if (tmp != null)
+            return Optional.of(tmp.clone());
+        else
+            return null;
     }
 
-    public boolean deleteById(Integer id) {
-        Persona tmp = db.stream()
-                .filter(persona -> persona.getId().equals(id))
-                .findFirst()
-                .orElse(null);
-        return db.remove(tmp);
+    public void deleteById(Integer id) {
+        Persona tmp = findById(id).orElse(null);
+        if (tmp != null) {
+            if (!db.remove(tmp)) {
+                // lancio perchè il metodo è void e posso comunicare il fallimento solo così
+                throw new RuntimeException();
+            }
+        }
     }
-
+/*
     public Persona create(Persona p) {
         p.setId(1 + db.stream()
                 .map(per -> per.getId())
@@ -87,4 +89,6 @@ public class PersonaRepository {
         db.add(p);
         return p.clone();
     }
+
+ */
 }//end class

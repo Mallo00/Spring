@@ -1,8 +1,8 @@
-package it.nextre.academy.nxtlearn.service;
+package it.nextre.academy.nxtlearn.service.persona;
 
 import it.nextre.academy.nxtlearn.model.Persona;
 import it.nextre.academy.nxtlearn.myUtil.DummyData;
-import it.nextre.academy.nxtlearn.repository.PersonaRepository;
+import it.nextre.academy.nxtlearn.repository.persona.PersonaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -18,9 +18,8 @@ public class PersonaServiceImpl implements PersonaService {
 //centralizzo il punto di controllo
 
 
-    @Override
-    public Persona getById(Integer id) {
-        Persona p = personaRepository.findById(id);
+    public Persona findById(Integer id) {
+        Persona p = personaRepository.findById(id).orElse(null);
         return p;
     }
 
@@ -34,7 +33,13 @@ public class PersonaServiceImpl implements PersonaService {
 
     @Override
     public List<Persona> getPersone() {
-        return personaRepository.getAll();
+        return personaRepository.findAll();
+    }
+
+    @Override
+    public Persona findByID(Integer id) {
+        Persona p = personaRepository.findById(id).orElse(null);
+        return p;
     }
 
     @Override
@@ -48,7 +53,15 @@ public class PersonaServiceImpl implements PersonaService {
 
     @Override
     public boolean deleteById(Integer id) {
-        return personaRepository.deleteById(id);
+        if (id != null && id >= 0) {
+            try {
+                personaRepository.deleteById(id);
+            } catch (RuntimeException e) {
+                // Simulo il return false dal mock
+                return false;
+            }
+        }
+        return false;
     }
 
     @Override
@@ -62,7 +75,7 @@ public class PersonaServiceImpl implements PersonaService {
 
     @Override
     public Persona update(Persona p) {
-        if (p != null && getById(p.getId()) != null) {
+        if (p != null && findById(p.getId()) != null) {
             return personaRepository.save(p);
         }
         return null;
@@ -70,7 +83,7 @@ public class PersonaServiceImpl implements PersonaService {
 
     @Override
     public Persona create(Persona p) {
-        return personaRepository.create(p);
+        return personaRepository.save(p);
     }
 
 }//end class

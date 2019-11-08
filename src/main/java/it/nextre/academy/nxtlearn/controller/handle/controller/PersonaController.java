@@ -2,7 +2,7 @@ package it.nextre.academy.nxtlearn.controller.handle.controller;
 
 import it.nextre.academy.nxtlearn.exception.PersonaNotFoundException;
 import it.nextre.academy.nxtlearn.model.Persona;
-import it.nextre.academy.nxtlearn.service.PersonaService;
+import it.nextre.academy.nxtlearn.service.persona.PersonaService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -48,7 +48,7 @@ public class PersonaController {
     @GetMapping({"/findById/{id}", "/{id}", "/getById/{id}"})
     public String getByID(@PathVariable("id") Integer id) {
         logger.info("LOG: getById, id=" + id);
-        Persona tmp = personaService.getById(id);
+        Persona tmp = personaService.findByID(id);
         if (tmp != null) {
             return "persona.html";
         } else {

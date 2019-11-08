@@ -1,10 +1,9 @@
 package it.nextre.academy.nxtlearn.controller.handleRest.controller;
 
 import it.nextre.academy.nxtlearn.exception.BadRequestException;
-import it.nextre.academy.nxtlearn.exception.NotFoundException;
-import it.nextre.academy.nxtlearn.exception.PersonaNotFoundException;
-import it.nextre.academy.nxtlearn.model.Persona;
-import it.nextre.academy.nxtlearn.service.persona.PersonaServiceImpl;
+import it.nextre.academy.nxtlearn.exception.GuidaNotFoundException;
+import it.nextre.academy.nxtlearn.model.Guida;
+import it.nextre.academy.nxtlearn.service.guida.GuidaServiceImpl;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,53 +14,50 @@ import org.springframework.web.server.ResponseStatusException;
 
 import javax.validation.Valid;
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 @RestController
-@RequestMapping("/personaRest")
-public class PersonaRestController {
+@RequestMapping("/guidaRest")
+public class GuidaRestController {
     @Autowired
-    PersonaServiceImpl personaService = new PersonaServiceImpl();
+    GuidaServiceImpl guidaService = new GuidaServiceImpl();
     // todo creare un bean conosciuto da spring in modo da collegarlo al logger
     Logger logger = LoggerFactory.getLogger(this.getClass());
 
-
-
-
-
     @GetMapping({"/findById/{id}", "/{id}", "/getById/{id}", "/get/{id}"})
-    public Persona getByID(@PathVariable("id") Integer id) {
+    public Optional<Guida> getByID(@PathVariable("id") Integer id) {
         logger.info("LOG: getById, id=" + id);
-        Persona tmp = personaService.findById(id);
+        Optional<Guida> tmp = guidaService.findById(id);
         if (tmp != null) {
             return tmp;
         } else {
-            throw new PersonaNotFoundException();
+            throw new GuidaNotFoundException();
         }
     }
 
     @GetMapping({"/", "/all", ""})
-    public List<Persona> getPersone() {
-        logger.info("Log: getPersone()");
-        return personaService.getPersone();
+    public List<Guida> getGuide() {
+        logger.info("Log: getGuide()");
+        return guidaService.getGuide();
     }
 
     @PutMapping("/update/{id}")
-    public Persona editOne(@RequestBody Persona p, @PathVariable("id") Integer id) {
+    public Guida editOne(@RequestBody Guida p, @PathVariable("id") Integer id) {
         logger.info("Log: update()");
         if (p != null && p.getId().equals(id)) {
-            Persona tmp = personaService.update(p);
+            Guida tmp = guidaService.update(p);
             if (tmp != null) {
                 return tmp;
             } else {
-                throw new NotFoundException();
+                throw new GuidaNotFoundException();
             }
         }
         throw new ResponseStatusException(HttpStatus.BAD_REQUEST);
     }
 
     @PostMapping({"/add", "/create"})
-    public Persona addOne(@RequestBody @Valid Persona tmp, BindingResult validator) {
+    public Guida addOne(@RequestBody @Valid Guida tmp, BindingResult validator) {
         logger.debug("LOG: addOne()");
         if (validator.hasErrors()) {
             logger.debug("LOG: validator.hasErrors()");
@@ -72,21 +68,20 @@ public class PersonaRestController {
             throw new BadRequestException(errs);
         }
         if (tmp != null) {
-            personaService.newPersona(tmp);
+            guidaService.newGuida(tmp);
         }
         return tmp;
     }
 
     @DeleteMapping({"/removeById/{id}", "/deleteById/{id}"})
-    public Persona deleteById(@PathVariable("id") Integer id) {
+    public Optional<Guida> deleteById(@PathVariable("id") Integer id) {
         logger.info("LOG: deleteById, id=" + id);
-        Persona tmp = personaService.findById(id);
+        Optional<Guida> tmp = guidaService.findById(id);
         if (tmp != null) {
-            personaService.deleteById(id);
+            guidaService.deleteById(id);
             return tmp;
         } else {
-            System.out.println("sasso");
-            throw new PersonaNotFoundException();
+            throw new GuidaNotFoundException();
         }
     }
 }//end class

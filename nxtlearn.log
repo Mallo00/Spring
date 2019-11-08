@@ -1,19 +1,46 @@
-19-11-07 gio 17:42:33.777  INFO   ---  [restartedMain            ]  o.s.b.w.embedded.tomcat.TomcatWebServer  :  Tomcat initialized with port(s): 8080 (http) 
-19-11-07 gio 17:42:33.789  INFO   ---  [restartedMain            ]  org.apache.catalina.core.StandardService :  Starting service [Tomcat] 
-19-11-07 gio 17:42:33.790  INFO   ---  [restartedMain            ]  org.apache.catalina.core.StandardEngine  :  Starting Servlet engine: [Apache Tomcat/9.0.27] 
-19-11-07 gio 17:42:33.864  INFO   ---  [restartedMain            ]  o.a.c.c.C.[Tomcat].[localhost].[/]       :  Initializing Spring embedded WebApplicationContext 
-19-11-07 gio 17:42:33.864  INFO   ---  [restartedMain            ]  o.s.web.context.ContextLoader            :  Root WebApplicationContext: initialization completed in 1067 ms 
-19-11-07 gio 17:42:33.972  INFO   ---  [restartedMain            ]  o.hibernate.jpa.internal.util.LogHelper  :  HHH000204: Processing PersistenceUnitInfo [name: default] 
-19-11-07 gio 17:42:34.014  INFO   ---  [restartedMain            ]  org.hibernate.Version                    :  HHH000412: Hibernate Core {5.4.8.Final} 
-19-11-07 gio 17:42:34.130  INFO   ---  [restartedMain            ]  org.hibernate.annotations.common.Version :  HCANN000001: Hibernate Commons Annotations {5.1.0.Final} 
-19-11-07 gio 17:42:34.201  INFO   ---  [restartedMain            ]  com.zaxxer.hikari.HikariDataSource       :  HikariPool-1 - Starting... 
-19-11-07 gio 17:42:34.484  INFO   ---  [restartedMain            ]  com.zaxxer.hikari.HikariDataSource       :  HikariPool-1 - Start completed. 
-19-11-07 gio 17:42:34.494  INFO   ---  [restartedMain            ]  org.hibernate.dialect.Dialect            :  HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect 
-19-11-07 gio 17:42:34.666  INFO   ---  [restartedMain            ]  o.h.e.t.j.p.i.JtaPlatformInitiator       :  HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform] 
-19-11-07 gio 17:42:34.672  INFO   ---  [restartedMain            ]  j.LocalContainerEntityManagerFactoryBean :  Initialized JPA EntityManagerFactory for persistence unit 'default' 
-19-11-07 gio 17:42:34.682  INFO   ---  [restartedMain            ]  o.s.b.d.a.OptionalLiveReloadServer       :  LiveReload server is running on port 35729 
-19-11-07 gio 17:42:34.743  WARN   ---  [restartedMain            ]  JpaBaseConfiguration$JpaWebConfiguration :  spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning 
-19-11-07 gio 17:42:34.825  INFO   ---  [restartedMain            ]  o.s.s.concurrent.ThreadPoolTaskExecutor  :  Initializing ExecutorService 'applicationTaskExecutor' 
-19-11-07 gio 17:42:34.869  INFO   ---  [restartedMain            ]  o.s.b.a.w.s.WelcomePageHandlerMapping    :  Adding welcome page: class path resource [static/index.html] 
-19-11-07 gio 17:42:34.983  INFO   ---  [restartedMain            ]  o.s.b.w.embedded.tomcat.TomcatWebServer  :  Tomcat started on port(s): 8080 (http) with context path '' 
-19-11-07 gio 17:42:34.985  INFO   ---  [restartedMain            ]  i.n.academy.nxtlearn.NxtlearnApplication :  Started NxtlearnApplication in 2.492 seconds (JVM running for 2.835) 
+19-11-08 ven 17:49:31.477  INFO   ---  [restartedMain            ]  o.s.b.d.a.OptionalLiveReloadServer       :  LiveReload server is running on port 35729 
+19-11-08 ven 17:49:31.760  WARN   ---  [restartedMain            ]  JpaBaseConfiguration$JpaWebConfiguration :  spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning 
+19-11-08 ven 17:49:31.833  INFO   ---  [restartedMain            ]  o.s.s.concurrent.ThreadPoolTaskExecutor  :  Initializing ExecutorService 'applicationTaskExecutor' 
+19-11-08 ven 17:49:31.877  INFO   ---  [restartedMain            ]  o.s.b.a.w.s.WelcomePageHandlerMapping    :  Adding welcome page: class path resource [static/index.html] 
+19-11-08 ven 17:49:31.994  INFO   ---  [restartedMain            ]  o.s.b.w.embedded.tomcat.TomcatWebServer  :  Tomcat started on port(s): 8080 (http) with context path '' 
+19-11-08 ven 17:49:31.997  INFO   ---  [restartedMain            ]  i.n.academy.nxtlearn.NxtlearnApplication :  Started NxtlearnApplication in 3.008 seconds (JVM running for 3.354) 
+19-11-08 ven 17:49:36.452  INFO   ---  [http-nio-8080-exec-1     ]  o.a.c.c.C.[Tomcat].[localhost].[/]       :  Initializing Spring DispatcherServlet 'dispatcherServlet' 
+19-11-08 ven 17:49:36.454  INFO   ---  [http-nio-8080-exec-1     ]  o.s.web.servlet.DispatcherServlet        :  Initializing Servlet 'dispatcherServlet' 
+19-11-08 ven 17:49:36.461  INFO   ---  [http-nio-8080-exec-1     ]  o.s.web.servlet.DispatcherServlet        :  Completed initialization in 7 ms 
+19-11-08 ven 17:49:36.548  DEBUG  ---  [http-nio-8080-exec-1     ]  i.n.a.n.c.h.c.GuidaRestController        :  LOG: addOne() 
+19-11-08 ven 17:50:54.637  DEBUG  ---  [http-nio-8080-exec-3     ]  i.n.a.n.c.h.c.GuidaRestController        :  LOG: addOne() 
+19-11-08 ven 17:58:56.096  INFO   ---  [restartedMain            ]  o.springframework.boot.SpringApplication :   _______  ____  ______________ ____     ___________   _____ __________  _______
+ \      \ \   \/  /\__    ___/|    |    \_   _____/  /  _  \\______   \ \      \
+ /   |   \ \     /   |    |   |    |     |    __)_  /  /_\  \|       _/ /   |   \
+/    |    \/     \   |    |   |    |___  |        \/    |    \    |   \/    |    \
+\____|__  /___/\  \  |____|   |_______ \/_______  /\____|__  /____|_  /\____|__  /
+        \/      \_/                   \/        \/         \/       \/         \/
+ 
+19-11-08 ven 17:58:56.137  INFO   ---  [restartedMain            ]  i.n.academy.nxtlearn.NxtlearnApplication :  Starting NxtlearnApplication on nextre163 with PID 10420 (C:\Academy\Spring\nxtlearn\target\classes started by utente in C:\Academy\Spring\nxtlearn) 
+19-11-08 ven 17:58:56.137  DEBUG  ---  [restartedMain            ]  i.n.academy.nxtlearn.NxtlearnApplication :  Running with Spring Boot v2.2.1.RELEASE, Spring v5.2.1.RELEASE 
+19-11-08 ven 17:58:56.138  INFO   ---  [restartedMain            ]  i.n.academy.nxtlearn.NxtlearnApplication :  The following profiles are active: dev 
+19-11-08 ven 17:58:56.165  INFO   ---  [restartedMain            ]  o.s.boot.devtools.restart.ChangeableUrls :  The Class-Path manifest attribute in C:\Users\utente\.m2\repository\org\glassfish\jaxb\jaxb-runtime\2.3.2\jaxb-runtime-2.3.2.jar referenced one or more files that do not exist: file:/C:/Users/utente/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/jakarta.xml.bind-api-2.3.2.jar,file:/C:/Users/utente/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/txw2-2.3.2.jar,file:/C:/Users/utente/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/istack-commons-runtime-3.0.8.jar,file:/C:/Users/utente/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/stax-ex-1.8.1.jar,file:/C:/Users/utente/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/FastInfoset-1.2.16.jar,file:/C:/Users/utente/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/jakarta.activation-api-1.2.1.jar 
+19-11-08 ven 17:58:56.166  INFO   ---  [restartedMain            ]  .e.DevToolsPropertyDefaultsPostProcessor :  Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable 
+19-11-08 ven 17:58:56.166  INFO   ---  [restartedMain            ]  .e.DevToolsPropertyDefaultsPostProcessor :  For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG' 
+19-11-08 ven 17:58:56.608  INFO   ---  [restartedMain            ]  .s.d.r.c.RepositoryConfigurationDelegate :  Bootstrapping Spring Data repositories in DEFAULT mode. 
+19-11-08 ven 17:58:56.671  INFO   ---  [restartedMain            ]  .s.d.r.c.RepositoryConfigurationDelegate :  Finished Spring Data repository scanning in 57ms. Found 3 repository interfaces. 
+19-11-08 ven 17:58:56.864  INFO   ---  [restartedMain            ]  trationDelegate$BeanPostProcessorChecker :  Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying) 
+19-11-08 ven 17:58:57.187  INFO   ---  [restartedMain            ]  o.s.b.w.embedded.tomcat.TomcatWebServer  :  Tomcat initialized with port(s): 8080 (http) 
+19-11-08 ven 17:58:57.194  INFO   ---  [restartedMain            ]  org.apache.catalina.core.StandardService :  Starting service [Tomcat] 
+19-11-08 ven 17:58:57.195  INFO   ---  [restartedMain            ]  org.apache.catalina.core.StandardEngine  :  Starting Servlet engine: [Apache Tomcat/9.0.27] 
+19-11-08 ven 17:58:57.266  INFO   ---  [restartedMain            ]  o.a.c.c.C.[Tomcat].[localhost].[/]       :  Initializing Spring embedded WebApplicationContext 
+19-11-08 ven 17:58:57.266  INFO   ---  [restartedMain            ]  o.s.web.context.ContextLoader            :  Root WebApplicationContext: initialization completed in 1100 ms 
+19-11-08 ven 17:58:57.369  INFO   ---  [restartedMain            ]  o.hibernate.jpa.internal.util.LogHelper  :  HHH000204: Processing PersistenceUnitInfo [name: default] 
+19-11-08 ven 17:58:57.412  INFO   ---  [restartedMain            ]  org.hibernate.Version                    :  HHH000412: Hibernate Core {5.4.8.Final} 
+19-11-08 ven 17:58:57.484  INFO   ---  [restartedMain            ]  org.hibernate.annotations.common.Version :  HCANN000001: Hibernate Commons Annotations {5.1.0.Final} 
+19-11-08 ven 17:58:57.552  INFO   ---  [restartedMain            ]  com.zaxxer.hikari.HikariDataSource       :  HikariPool-1 - Starting... 
+19-11-08 ven 17:58:57.780  INFO   ---  [restartedMain            ]  com.zaxxer.hikari.HikariDataSource       :  HikariPool-1 - Start completed. 
+19-11-08 ven 17:58:57.789  INFO   ---  [restartedMain            ]  org.hibernate.dialect.Dialect            :  HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect 
+19-11-08 ven 17:58:58.312  INFO   ---  [restartedMain            ]  o.h.e.t.j.p.i.JtaPlatformInitiator       :  HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform] 
+19-11-08 ven 17:58:58.316  INFO   ---  [restartedMain            ]  j.LocalContainerEntityManagerFactoryBean :  Initialized JPA EntityManagerFactory for persistence unit 'default' 
+19-11-08 ven 17:58:58.325  INFO   ---  [restartedMain            ]  o.s.b.d.a.OptionalLiveReloadServer       :  LiveReload server is running on port 35729 
+19-11-08 ven 17:58:58.599  WARN   ---  [restartedMain            ]  JpaBaseConfiguration$JpaWebConfiguration :  spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning 
+19-11-08 ven 17:58:58.672  INFO   ---  [restartedMain            ]  o.s.s.concurrent.ThreadPoolTaskExecutor  :  Initializing ExecutorService 'applicationTaskExecutor' 
+19-11-08 ven 17:58:58.717  INFO   ---  [restartedMain            ]  o.s.b.a.w.s.WelcomePageHandlerMapping    :  Adding welcome page: class path resource [static/index.html] 
+19-11-08 ven 17:58:58.837  INFO   ---  [restartedMain            ]  o.s.b.w.embedded.tomcat.TomcatWebServer  :  Tomcat started on port(s): 8080 (http) with context path '' 
+19-11-08 ven 17:58:58.839  INFO   ---  [restartedMain            ]  i.n.academy.nxtlearn.NxtlearnApplication :  Started NxtlearnApplication in 2.974 seconds (JVM running for 3.315) 
